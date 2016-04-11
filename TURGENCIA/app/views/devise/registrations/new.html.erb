@@ -1,0 +1,60 @@
+
+<span><h4>Bienvenido</h4> cual es tu urgencia?<br> Registrate para lograr  atenderte.</span>
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :Nombre %><br />
+    <%= f.text_field :name %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :Apellido %><br />
+    <%= f.text_field :lastname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :imagen %><br />
+    <%= f.file_field :avatar %>
+  </div>
+
+  <br>
+  <div class="field">
+    <%= f.label :Identificacion %><br />
+    <%= f.text_field :identify %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :EPS %><br />
+    <%= f.text_field :eps %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :Email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :Contraseña %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :Confirme_su_contraseña %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+<br>
+<button class="btn btn-primary">asd</button>

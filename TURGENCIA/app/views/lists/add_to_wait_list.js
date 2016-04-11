@@ -1,0 +1,1 @@
+$('#respuesta').html('Añadido a la lista de espera');

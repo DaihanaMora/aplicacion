@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TURGENCIA</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="jumbotron"> 
+  <% if user_signed_in? %>
+    <li>
+      <p> <%= current_user.name%></p>
+      <%= image_tag(current_user.avatar) %><br>
+      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+    </li>
+  <% else %>   
+    <li>
+      <%= link_to('Login', new_user_session_path)  %>  
+    </li>
+  <% end %>
+
+  <div>
+    <%= form_tag(search_clinics_path, method: "get") do %>
+    <%= label_tag(:q, "Search:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+    <% end %>
+  </div>
+</div>
+<%= yield %>
+
+</body>
+</html>
