@@ -9,38 +9,38 @@
               <%= devise_error_messages! %>
 
               <div class="field1">
-                <%= f.label :Nombre %><br />
+                <%= f.label :name, "Nombre" %><br />
                 <%= f.text_field :name %>
               </div>
               <br>
               <div class="field2">
-                <%= f.label :Apellido %><br />
+                <%= f.label :lastname, "Apellido" %><br />
                 <%= f.text_field :lastname %>
               </div>
 
               <div class="field3">
-                <%= f.label :imagen %><br />
+                <%= f.label :avatar, "Imagen" %><br />
                 <%= f.file_field :avatar %>
               </div>
 
               <br>
               <div class="field4">
-                <%= f.label :Identificacion %><br />
+                <%= f.label :identify, "Identificación" %><br />
                 <%= f.text_field :identify %>
               </div>
               <br>
               <div class="field5">
-                <%= f.label :entity %><br />
+                <%= f.label :entity_id, "EPS" %><br />
                 <%= f.collection_select :entity_id, Entity.all, :id, :name %>
               </div>
               <br>
               <div class="field6">
-                <%= f.label :Email %><br />
+                <%= f.label :email, "Email" %><br />
                 <%= f.email_field :email, autofocus: true %>
               </div>
               <br>
               <div class="field7">
-                <%= f.label :Contraseña %>
+                <%= f.label :password, "Contraseña" %>
                 <% if @minimum_password_length %>
                 <em>(<%= @minimum_password_length %> characters minimum)</em>
                 <% end %><br />
@@ -48,7 +48,7 @@
               </div>
               <br>
               <div class="field8">
-                <%= f.label :Confirme_su_contraseña %><br />
+                <%= f.label :password_confirmation, "Confirme su contraseña" %><br />
                 <%= f.password_field :password_confirmation, autocomplete: "off" %>
               </div>
               <br>
