@@ -20,8 +20,8 @@
     <%= f.text_field :address %>
   </div>
   <div class="field">
-    <%= f.label :eps_asociada %><br>
-    <%= f.text_field :eps_asociada %>
+    <%= f.label :entity_ids, "EPS asociadas" %><br>
+    <%= f.collection_check_boxes :entity_ids, Entity.all, :id, :name %>
   </div>
   <div class="actions">
     <%= f.submit %>

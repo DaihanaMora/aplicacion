@@ -1,0 +1,12 @@
+<% clinics.each do |clinic| %>
+	<div class="col-md-4" id="list">
+    <h3><%= clinic.name %></h3><br>
+	  <p>Direccion: <%= clinic.address %></p><br>
+	  <p>Eps asociadas: 
+	  	<% clinic.entities.each do |entity|%>
+	  		<%= entity.name + ", "%>
+	  	<% end %>
+	 	</p><br>
+	  <p><%= link_to 'Show', clinic %></p>
+	</div>
+<%end%>

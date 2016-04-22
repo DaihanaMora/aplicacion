@@ -1,18 +1,9 @@
 <p id="notice"><%= notice %></p>
-
-  
-     <% @clinics.each do |clinic| %>
-      <div class="col-md-4">
-          <h3><%= clinic.name %></h3><br>
-          <p>Direccion: <%= clinic.address %></p><br>
-          <p>Eps asociadas: <%= clinic.eps_asociada %></p><br>
-          <p><%= link_to 'Show', clinic %></p>
-          <p><%= link_to 'Edit', edit_clinic_path(clinic) %></p>
-          <p><%= link_to 'Destroy', clinic, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      </div>  
-  </div>  
+     
+<div id="list">
+  <%= image_tag 'ajax-loader.gif' %>
+</div>  
 
 
-  <% end %>
 
  

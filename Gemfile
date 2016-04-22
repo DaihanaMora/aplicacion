@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -36,7 +35,8 @@ gem 'devise'
 gem "letter_opener", :group => :development
 gem 'carrierwave'
 gem "twitter-bootstrap-rails"
-
+gem 'cancancan', '~> 1.10'
+gem 'activeadmin', '~> 1.0.0.pre2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -52,7 +52,6 @@ group :development do
 
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
-
 end
 
 group :production do
@@ -61,4 +60,3 @@ group :production do
   #rails 12 factor
   gem 'rails_12factor'
 end
-

@@ -12,7 +12,9 @@
 
 <p>
   <strong>Eps asociada:</strong>
-  <%= @clinic.eps_asociada %>
+  <% @clinic.entities.each do |entity|%>
+	  		<%= entity.name + ", "%>
+	  	<% end %>
 </p>
 
 <p>

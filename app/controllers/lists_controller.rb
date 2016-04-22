@@ -6,10 +6,10 @@ class ListsController < ApplicationController
 
   def add_to_wait_list
     clinic = Clinic.find(params[:id])
-    list = List.new
-    list.clinic = clinic
-    list.user = current_user
-    list.save
+    @list = List.new
+    @list.clinic = clinic
+    @list.user = current_user
+    @list.save
   end
 
   def index

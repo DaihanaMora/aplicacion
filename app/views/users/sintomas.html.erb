@@ -1,0 +1,12 @@
+
+<%= notice %>
+<h1>Señor <%= current_user.name_all %>, ¿Cuales son sus sintomas? </h1>
+
+<%= form_tag save_sintoma_path, method: :post, html: {class: "nifty_form"} do  %>
+<%= text_area_tag  :sintomas, nil, size: "60x12" %>
+
+
+<div class="actions">
+    <%= submit_tag "Enviar" %>
+</div>
+<% end %>

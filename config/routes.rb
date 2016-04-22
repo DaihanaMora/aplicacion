@@ -1,23 +1,30 @@
 Rails.application.routes.draw do
-  
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :lists do
     member do 
       post 'add_to_wait_list', as: 'add_to_wait'
     end
   end
   
-  devise_for :users, controllers: { registrations: "registrations"}
-  
   # esta es mi index
   devise_scope :user do
     root to: "devise/registrations#new"
+
+    get 'user/sintomas' , to: 'users#sintomas' , as: :sintomas
+    post 'save_sintoma', to: 'users#save_sintoma'
+
   end
 
   resources :clinics do 
     collection do
       get 'search'
+      get 'all'
     end
   end
+
+  devise_for :users, controllers: {sessions: 'sessions', registrations: 'registrations'}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

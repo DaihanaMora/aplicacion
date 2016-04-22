@@ -13,4 +13,7 @@
  *= require_self
  *= require bootstrap_and_overrides
  *= require clinics
+ *= require index
+ *= require layout
+
  */

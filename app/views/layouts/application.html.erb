@@ -7,28 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="jumbotron"> 
-  <% if user_signed_in? %>
-    <li>
-      <p> <%= current_user.name%></p>
-      <%= image_tag(current_user.avatar) %><br>
-      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-    </li>
-  <% else %>   
-    <li>
-      <%= link_to('Login', new_user_session_path)  %>  
-    </li>
-  <% end %>
-
-  <div>
-    <%= form_tag(search_clinics_path, method: "get") do %>
-    <%= label_tag(:q, "Search:") %>
-    <%= text_field_tag(:q) %>
-    <%= submit_tag("Search") %>
-    <% end %>
-  </div>
+<div class:"container">
+      <div class="jumbotron"> 
+      <%= image_tag  "logo.png" %><!-- class="img-responsive"-->
+      <li><%= link_to "Todas las clinicas", all_clinics_path %></li>
+           <% if user_signed_in? %>
+              <li>
+                <p> <%= current_user.name%></p>
+                <%= link_to "Mis clinicas", clinics_path %>
+                <%= image_tag(current_user.avatar) %><br>
+                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+              </li>
+            <% else %>   
+              <li class="login">
+                <a href="#" class="btn btn-success navbar-btn" data-toggle="modal" data-target="#myModal">Login</a> 
+              </li>
+            <% end %> 
+                <br><br>
+            <div class="search">
+              <%= form_tag(search_clinics_path, method: "get") do %>
+              <%= label_tag(:q, "",) %>
+              <%= text_field_tag(:q) %>
+              <%= submit_tag("Search") %>
+              <% end %>
+            </div>
+      </div>
 </div>
 <%= yield %>
-
+<%= render partial: 'partials/login' %>
 </body>
 </html>
